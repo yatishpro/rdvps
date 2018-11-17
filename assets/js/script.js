@@ -1,28 +1,12 @@
-var owl = $('.owl-carousel');
-owl.owlCarousel({
-    loop:true,
-    nav:true,
-    margin:10,
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:3
-        },            
-        960:{
-            items:5
-        },
-        1200:{
-            items:6
-        }
-    }
-});
-owl.on('mousewheel', '.owl-stage', function (e) {
-    if (e.deltaY>0) {
-        owl.trigger('next.owl');
-    } else {
-        owl.trigger('prev.owl');
-    }
-    e.preventDefault();
-});
+var services = $('.sider-products');
+    services.owlCarousel({
+      items: 4, //10 items above 1000px browser width
+      itemsDesktop: [1000, 2], //5 items between 1000px and 901px
+      itemsDesktopSmall: [900, 2], // betweem 900px and 601px
+      itemsTablet: [600, 1], //2 items between 600 and 0
+      itemsMobile: 1, // itemsMobile disabled - inherit from itemsTablet option
+      slideSpeed: 1000,
+      loop:true,
+      autoPlay: true,
+      autoHeight: true
+  });
