@@ -2,6 +2,9 @@ const productMenu = document.querySelectorAll('.product-menu');
 const mainHeader = document.querySelector('.main-header');
 const mobileButton = document.querySelector('.mobile-menu');
 const menuRef = document.querySelector('.nav-item-rd');
+const mobileProductSelect = document.querySelector('.mobile-product-select');
+const productMenuRef = document.querySelector('.header-select');
+
 var homeIntro = $('.home-slider-products');
     homeIntro.owlCarousel({
       items: 1, //10 items above 1000px browser width
@@ -77,6 +80,12 @@ var procuctsSet = $('.slider-products');
       mobileButton.addEventListener('click', function(){
           if(window.innerWidth < 891){
             menuRef.classList.toggle('show');
+          }
+      });
+
+      mobileProductSelect.addEventListener('click', function(){
+          if(window.innerWidth < 689){
+            productMenuRef.classList.toggle('show');
           }
       });
   }
