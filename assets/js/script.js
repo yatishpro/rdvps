@@ -1,3 +1,5 @@
+const productMenu = document.querySelectorAll('.product-menu');
+const mainHeader = document.querySelector('.main-header');
 var homeIntro = $('.home-intro-products');
     homeIntro.owlCarousel({
       items: 4, //10 items above 1000px browser width
@@ -45,5 +47,26 @@ var procuctsSet = $('.slider-products');
       slideSpeed: 1000,
       loop:true,
       autoPlay: true,
-      autoHeight: true
+      autoHeight: true,
   });
+
+  window.onload = function(){
+      productMenu.forEach(function(iterator){
+        iterator.addEventListener('click', function(e){
+            productMenu.forEach(function(iterator){
+                iterator.classList.remove('pactive');
+            });
+            e.target.classList.add('pactive');
+        });
+      });
+  }
+
+  window.onscroll = function(){
+      const sticky = mainHeader.offsetHeight;
+      
+      if(window.pageYOffset > sticky){
+        mainHeader.classList.add('sticky');
+      } else {
+        mainHeader.classList.remove('sticky');
+      }
+  }
